@@ -627,6 +627,7 @@
 			"NAVIGATION": {
 				"EVENTS": "Events",
 				"SERIES": "Series",
+				"PLAYLISTS": "Playlists",
 				"OVERVIEW": "Overview",
 				"LABEL": "Switch between events and series."
 			},
@@ -1288,6 +1289,16 @@
 					"LOCATION": "Location",
 					"LINK": "Link"
 				}
+			}
+		},
+		"PLAYLISTS": {
+			"TABLE": {
+				"CAPTION": "Playlists",
+				"TITLE": "Title",
+				"DESCRIPTION": "Description",
+				"CREATOR": "Creator",
+				"UPDATED": "Updated",
+				"ACTION": "Action"
 			}
 		}
 	},
@@ -1996,6 +2007,14 @@
 			},
 			"CREATION_DATE": {
 				"LABEL": "Created"
+			}
+		},
+		"PLAYLISTS": {
+			"CREATOR": {
+				"LABEL": "Creator"
+			},
+			"UPDATED": {
+				"LABEL": "Updated"
 			}
 		},
 		"USERS": {
