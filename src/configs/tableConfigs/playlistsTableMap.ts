@@ -1,5 +1,6 @@
 import PlaylistCreatorCell from "../../components/events/partials/PlaylistCreatorCell";
 import PlaylistUpdatedCell from "../../components/events/partials/PlaylistUpdatedCell";
+import PlaylistActionsCell from "../../components/events/partials/PlaylistActionsCell";
 
 /**
  * This map contains the mapping between the template strings and the corresponding react component.
@@ -7,4 +8,5 @@ import PlaylistUpdatedCell from "../../components/events/partials/PlaylistUpdate
 export const playlistsTemplateMap = {
   PlaylistCreatorCell: PlaylistCreatorCell,
   PlaylistUpdatedCell: PlaylistUpdatedCell,
+  PlaylistActionsCell: PlaylistActionsCell,
 };
