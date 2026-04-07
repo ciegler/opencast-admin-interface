@@ -467,8 +467,8 @@ export const AccessPolicyTable = <T extends AccessPolicyTabFormikProps>({
 
 	// Filter available options by custom prefixes from the config
 	if (aclDefaults) {
-		if (aclDefaults["display_role_filter_prefixes"]) {
-			const prefixes = aclDefaults["display_role_filter_prefixes"].split(",");
+		if (aclDefaults["display_role_filter_blacklist_prefixes"]) {
+			const prefixes = aclDefaults["display_role_filter_blacklist_prefixes"].split(",");
 			rolesFilteredbyPolicies = rolesFilteredbyPolicies.filter(role =>
 				!prefixes.some(prefix => role.name.startsWith(prefix)),
 			);
