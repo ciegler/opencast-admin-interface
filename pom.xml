@@ -18,7 +18,7 @@
   </properties>
   <profiles>
     <profile>
-      <id>frontend-no-prebuild</id>
+      <id>frontend-no-prebuilt</id>
       <properties>
         <ui.include.resource>/admin-ui=-build/</ui.include.resource>
       </properties>
