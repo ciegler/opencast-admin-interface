@@ -11,7 +11,7 @@
     ],
     "jsx": "react-jsx", 
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "allowJs": false,
@@ -21,6 +21,6 @@
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["vite/client", "vite-plugin-svgr/client"]
+    "types": ["vite/client"]
   }
 }

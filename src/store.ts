@@ -1,5 +1,5 @@
 import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import storage from "redux-persist/es/storage";
 import { UnknownAction, combineReducers } from "redux";
 import tableFilters from "./slices/tableFilterSlice";
 import tableFilterProfiles from "./slices/tableFilterProfilesSlice";
@@ -28,7 +28,7 @@ import userInfo from "./slices/userInfoSlice";
 import statistics from "./slices/statisticsSlice";
 import { ThunkAction, configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
+import autoMergeLevel2 from "redux-persist/es/stateReconciler/autoMergeLevel2";
 
 /**
  * This File contains the configuration for the store used by the reducers all over the app
