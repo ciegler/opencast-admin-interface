@@ -163,6 +163,10 @@ export const pageSizeStyles: StylesConfig<any, false> = {
 		height: 28,
 		width: 75,
 		borderRadius: 4,
+		"&:hover": {
+			borderColor: "#378dd4",
+			boxShadow: "0 0 0 1px #378dd4",
+		},
 		paddingLeft: 10,
 
 		cursor: "pointer",
