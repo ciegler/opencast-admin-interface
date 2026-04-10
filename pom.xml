@@ -29,7 +29,7 @@
             <artifactId>exec-maven-plugin</artifactId>
             <configuration>
               <environmentVariables>
-                <PUBLIC_PATH>/admin-ui</PUBLIC_PATH>
+                <PUBLIC_URL>/admin-ui</PUBLIC_URL>
               </environmentVariables>
             </configuration>
             <executions>
@@ -84,7 +84,7 @@
               <nodeVersion>${nodejs.version}</nodeVersion>
               <installDirectory>target</installDirectory>
               <environmentVariables>
-                <PUBLIC_PATH>/admin-ui</PUBLIC_PATH>
+                <PUBLIC_URL>/admin-ui</PUBLIC_URL>
               </environmentVariables>
             </configuration>
             <executions>
