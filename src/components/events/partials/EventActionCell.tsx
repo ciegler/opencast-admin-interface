@@ -17,7 +17,7 @@ import { openModal } from "../../../slices/eventDetailsSlice";
 import { ActionCellDelete } from "../../shared/ActionCellDelete";
 import { Modal, ModalHandle } from "../../shared/modals/Modal";
 import ButtonLikeAnchor from "../../shared/ButtonLikeAnchor";
-import { LuFileSymlink, LuFileText, LuFolderOpen, LuLink, LuMessageCircle, LuScissors, LuTriangleAlert } from "react-icons/lu";
+import { LuFileSymlink, LuFileText, LuFolderOpen, LuLink, LuMessageCircle, LuMessageCircleWarning, LuScissors, LuTriangleAlert } from "react-icons/lu";
 import { SeriesDetailsPage } from "./modals/SeriesDetails";
 
 /**
@@ -148,7 +148,7 @@ const EventActionCell = ({
 					// tooltipText={"EVENTS.EVENTS.TABLE.TOOLTIP.COMMENTS"} // Disabled due to performance concerns
 					className={"action-cell-button comments-open"}
 				>
-					<LuMessageCircle className="blue"/>
+					<LuMessageCircleWarning className="blue"/>
 				</ButtonLikeAnchor>
 			)}
 
