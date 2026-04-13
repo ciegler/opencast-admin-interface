@@ -530,7 +530,7 @@ export const AccessPolicyTable = <T extends AccessPolicyTabFormikProps>({
 											{formik.values.policies.length > 0 &&
 												policiesFiltered.map(
 													(policy, index) => (
-														<tr key={index}>
+														<tr key={policy.role + index}>
 															{/* dropdown for policy.role */}
 															<td className="editable">
 																{!transactions.readOnly ? (
@@ -547,11 +547,11 @@ export const AccessPolicyTable = <T extends AccessPolicyTabFormikProps>({
 																		handleChange={element => {
 																			if (element) {
 																				const matchingRole = roles.find(role => role.name === element.value);
-																				formik.setFieldValue(`policies.${index}.role`, element.value);
-																				formik.setFieldValue(
-																					`policies.${index}.user`,
-																					matchingRole ? matchingRole.user : undefined,
-																				);
+																				arrayHelpers.replace(formik.values.policies.findIndex(p => p === policy), {
+																					...policy,
+																					role: element.value,
+																					user: matchingRole ? matchingRole.user : undefined,
+																				});
 																			}
 																		}}
 																		placeholder={
@@ -591,7 +591,10 @@ export const AccessPolicyTable = <T extends AccessPolicyTabFormikProps>({
 																			: "false"
 																	}`}
 																	onChange={(read: React.ChangeEvent<HTMLInputElement>) =>
-																		formik.setFieldValue(`policies.${index}.read`, read.target.checked)
+																		arrayHelpers.replace(formik.values.policies.findIndex(p => p === policy), {
+																			...policy,
+																			read: read.target.checked,
+																		})
 																	}
 																/>
 															</td>
@@ -615,7 +618,11 @@ export const AccessPolicyTable = <T extends AccessPolicyTabFormikProps>({
 																			: "false"
 																	}`}
 																	onChange={(write: React.ChangeEvent<HTMLInputElement>) =>
-																		formik.setFieldValue(`policies.${index}.write`, write.target.checked)
+																		arrayHelpers.replace(formik.values.policies.findIndex(p => p === policy), {
+																			...policy,
+																			write:
+																				write.target.checked,
+																		})
 																	}
 																/>
 															</td>
