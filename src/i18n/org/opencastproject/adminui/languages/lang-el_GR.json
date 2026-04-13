@@ -1061,7 +1061,7 @@
 						"DESCRIPTION": "Περιγραφή",
 						"EXECUTION_HOST": "Εξυπηρετητές εκτέλεσης",
 						"JOB": "Εργασία",
-						"TIME_IN_QUEUE": "Χρόνος στην ουρά",
+						"TIME_IN_QUEUE": "Total subjobs time in queue",
 						"STARTED": "Ξεκίνησε",
 						"FINISHED": "Ολοκληρώθηκε",
 						"RETRY_STRATEGY": "Στρατηγική επανάληψης",

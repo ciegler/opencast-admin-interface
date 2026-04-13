@@ -1061,7 +1061,7 @@
 						"DESCRIPTION": "Opis",
 						"EXECUTION_HOST": "Komputer Wykonujący",
 						"JOB": "Zadanie",
-						"TIME_IN_QUEUE": "Czas w kolejce",
+						"TIME_IN_QUEUE": "Total subjobs time in queue",
 						"STARTED": "Rozpoczęte",
 						"FINISHED": "Zakończone",
 						"RETRY_STRATEGY": "Strategia Ponawiania",

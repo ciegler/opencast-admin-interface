@@ -1061,7 +1061,7 @@
 						"DESCRIPTION": "Beschreibung",
 						"EXECUTION_HOST": "Rechner",
 						"JOB": "Job",
-						"TIME_IN_QUEUE": "Zeit in Warteschlange",
+						"TIME_IN_QUEUE": "Total subjobs time in queue",
 						"STARTED": "Gestartet",
 						"FINISHED": "Verarbeitet",
 						"RETRY_STRATEGY": "Wiederholungs-Strategie",

@@ -1061,7 +1061,7 @@
 						"DESCRIPTION": "Açıklama",
 						"EXECUTION_HOST": "Yürütme Ana Bilgisayarı",
 						"JOB": "Görev",
-						"TIME_IN_QUEUE": "Sirada Bekleme Süresi",
+						"TIME_IN_QUEUE": "Total subjobs time in queue",
 						"STARTED": "Başlatıldı",
 						"FINISHED": "Tamamlandı",
 						"RETRY_STRATEGY": "Yeniden Deneme Stratejisi",

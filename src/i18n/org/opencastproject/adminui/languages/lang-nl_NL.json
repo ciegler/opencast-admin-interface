@@ -1061,7 +1061,7 @@
 						"DESCRIPTION": "Beskriveslse",
 						"EXECUTION_HOST": "Eksekveringsvært",
 						"JOB": "Job",
-						"TIME_IN_QUEUE": "Tid i kø",
+						"TIME_IN_QUEUE": "Total subjobs time in queue",
 						"STARTED": "Startet",
 						"FINISHED": "Afsluttet",
 						"RETRY_STRATEGY": "Forsøg igen-strategi",

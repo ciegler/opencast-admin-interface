@@ -1061,7 +1061,7 @@
 						"DESCRIPTION": "Descrición",
 						"EXECUTION_HOST": "Servidor",
 						"JOB": "Traballo",
-						"TIME_IN_QUEUE": "Tempo na cola",
+						"TIME_IN_QUEUE": "Total subjobs time in queue",
 						"STARTED": "Iniciado",
 						"FINISHED": "Finalizado",
 						"RETRY_STRATEGY": "Reintentar estratexia",

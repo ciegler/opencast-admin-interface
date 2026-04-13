@@ -1061,7 +1061,7 @@
 						"DESCRIPTION": "Opis",
 						"EXECUTION_HOST": "Gostitelj izvedbe",
 						"JOB": "Naloga",
-						"TIME_IN_QUEUE": "Čas v čakalni vrsti",
+						"TIME_IN_QUEUE": "Total subjobs time in queue",
 						"STARTED": "Začeto",
 						"FINISHED": "Dokončano",
 						"RETRY_STRATEGY": "Ponovi postopek",

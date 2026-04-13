@@ -1061,7 +1061,7 @@
 						"DESCRIPTION": "Descrizione",
 						"EXECUTION_HOST": "Host di esecuzione",
 						"JOB": "Lavoro",
-						"TIME_IN_QUEUE": "Tempo in coda",
+						"TIME_IN_QUEUE": "Total subjobs time in queue",
 						"STARTED": "Avviato",
 						"FINISHED": "Completato",
 						"RETRY_STRATEGY": "Riprova strategia",

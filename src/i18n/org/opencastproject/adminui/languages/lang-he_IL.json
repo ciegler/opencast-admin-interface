@@ -1061,7 +1061,7 @@
 						"DESCRIPTION": "תאור",
 						"EXECUTION_HOST": "מארח מבצע",
 						"JOB": "עבודה",
-						"TIME_IN_QUEUE": "זמן בתור",
+						"TIME_IN_QUEUE": "Total subjobs time in queue",
 						"STARTED": "החל",
 						"FINISHED": "הסתיים",
 						"RETRY_STRATEGY": "אסטרטגיית נסיון נוסף",

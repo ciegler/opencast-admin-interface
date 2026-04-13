@@ -1061,7 +1061,7 @@
 						"DESCRIPTION": "Description",
 						"EXECUTION_HOST": "Hôte d'exécution",
 						"JOB": "Tâche",
-						"TIME_IN_QUEUE": "Temps d'attente",
+						"TIME_IN_QUEUE": "Total subjobs time in queue",
 						"STARTED": "Démarré",
 						"FINISHED": "Terminé",
 						"RETRY_STRATEGY": "Stratégie de réessaie",
