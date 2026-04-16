@@ -353,7 +353,7 @@ const Upload = <T extends RequiredFormPropsUpload>({
 									</td>
 									<td className="editable">
 										<Field
-											name={field.id}
+											name={"metadata" + "." + field.id}
 											metadataField={field}
 											component={RenderField}
 										/>
