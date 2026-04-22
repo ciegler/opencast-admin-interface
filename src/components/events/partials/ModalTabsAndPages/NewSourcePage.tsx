@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Notifications from "../../../shared/Notifications";
 import DatePicker from "react-datepicker";
@@ -241,7 +241,7 @@ const Upload = <T extends RequiredFormPropsUpload>({
 }) => {
 	const { t } = useTranslation();
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>, assetId: string) => {
+	const handleChange = (e: { target: { files: FileList | null } }, assetId: string) => {
 		if (e.target.files) {
 			if (e.target.files.length === 0) {
 				formik.setFieldValue(assetId, null);
@@ -286,6 +286,20 @@ const Upload = <T extends RequiredFormPropsUpload>({
 														if (e.key === "Enter" || e.key === " ") {
 															e.preventDefault();
 															document.getElementById(asset.id)?.click();
+														}
+													}}
+													// Support drag & drop file upload
+													onDragOver={e => {
+														e.preventDefault();
+													}}
+													onDrop={e => {
+														e.preventDefault();
+														const files = e.dataTransfer.files;
+														if (files && files.length > 0) {
+															handleChange(
+																{ target: { files } }, // mimic input event
+																`uploadAssetsTrack.${key}.file`,
+															);
 														}
 													}}
 													aria-label={t("EVENTS.EVENTS.NEW.SOURCE.UPLOAD.ARIA_FILE_PICKER")}
