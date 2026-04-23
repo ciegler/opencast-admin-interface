@@ -102,6 +102,5 @@ export const handleTemplateChange = async <T extends { policies: TransformedAcl[
 
 	formik.setFieldValue("policies", template.acl);
 	formik.setFieldValue("aclTemplate", templateId);
-	// Is this necessary?
-	dispatch(checkAcls(formik.values.policies));
+	dispatch(checkAcls(template.acl));
 };
