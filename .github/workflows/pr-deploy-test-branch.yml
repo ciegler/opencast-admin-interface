@@ -53,7 +53,7 @@ jobs:
       - name: Get Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Run npm ci
         run: npm ci
