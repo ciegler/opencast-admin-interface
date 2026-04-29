@@ -7,6 +7,7 @@ import { EditedEvents, Event, UploadAssetsTrack } from "../slices/eventSlice";
 import { Role } from "../slices/aclSlice";
 import { ParseKeys } from "i18next";
 import { UserRole } from "../slices/userSlice";
+import { PlaylistEntry } from "../slices/playlistDetailsSlice";
 
 // Context for notifications shown in modals
 export const NOTIFICATION_CONTEXT = "modal-form";
@@ -120,6 +121,25 @@ export const initialFormValuesNewSeries: {
 	breadcrumbs: [],
 	selectedPage: undefined,
 	metadata: {},
+};
+
+
+export const initialFormValuesNewPlaylist: {
+	policies: TransformedAcl[],
+	aclTemplate?: string,
+	metadata: { [key: string]: unknown },
+	entries: PlaylistEntry[],
+} = {
+	policies: [
+		{
+			role: "ROLE_USER_ADMIN",
+			read: true,
+			write: true,
+			actions: [],
+		},
+	],
+	metadata: {},
+	entries: [],
 };
 
 // All fields for new theme form that are fix and not depending on response of backend

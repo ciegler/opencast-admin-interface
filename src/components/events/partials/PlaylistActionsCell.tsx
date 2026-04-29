@@ -1,0 +1,48 @@
+import { LuFileText } from "react-icons/lu";
+
+import { fetchPlaylistDetails, openModal } from "../../../slices/playlistDetailsSlice";
+import { useAppDispatch } from "../../../store";
+import { deletePlaylist, Playlist } from "../../../slices/playlistSlice";
+import ButtonLikeAnchor from "../../shared/ButtonLikeAnchor";
+import { PlaylistDetailsPage } from "./modals/PlaylistDetails";
+import { ActionCellDelete } from "../../shared/ActionCellDelete";
+
+
+/**
+ * This component renders the action cells of playlists in the table view
+ */
+const PlaylistActionsCell = ({
+  row,
+}: {
+  row: Playlist
+}) => {
+  const dispatch = useAppDispatch();
+
+  const showPlaylistDetailsModal = async () => {
+    await dispatch(fetchPlaylistDetails(row.id));
+
+    dispatch(openModal(PlaylistDetailsPage.Metadata, { id: row.id, title: row.title }));
+  };
+
+  return <>
+    {/* playlist details */}
+    <ButtonLikeAnchor
+      onClick={() => showPlaylistDetailsModal()}
+      className={"action-cell-button"}
+      editAccessRole={"ROLE_UI_PLAYLISTS_DETAILS_VIEW"}
+    >
+      <LuFileText />
+    </ButtonLikeAnchor>
+
+    {/* delete playlist */}
+    <ActionCellDelete
+      editAccessRole={"ROLE_UI_PLAYLISTS_DELETE"}
+      resourceId={row.id}
+      resourceName={row.title}
+      resourceType={"PLAYLIST"}
+      deleteMethod={id => dispatch(deletePlaylist(id))}
+    />
+  </>;
+};
+
+export default PlaylistActionsCell;

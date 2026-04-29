@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { HashRouter, Navigate, Route, Routes } from "react-router";
+import { Tooltip } from "react-tooltip";
 import "./App.scss";
 import Events from "./components/events/Events";
 import Recordings from "./components/recordings/Recordings";
@@ -13,11 +14,11 @@ import Services from "./components/systems/Services";
 import Groups from "./components/users/Groups";
 import Acls from "./components/users/Acls";
 import About from "./components/About";
+import Playlists from "./components/events/Playlists";
 import { useAppDispatch } from "./store";
 import { fetchOcVersion, fetchUserInfo } from "./slices/userInfoSlice";
 import { subscribeToAuthEvents } from "./utils/broadcastSync";
 import { useTableFilterStateValidation } from "./hooks/useTableFilterStateValidation";
-import { Tooltip } from "react-tooltip";
 
 function App() {
 	const dispatch = useAppDispatch();
@@ -47,6 +48,8 @@ function App() {
 				<Route path={"/events/events"} element={<Events />} />
 
 				<Route path={"/events/series"} element={<Series />} />
+
+				<Route path={"/events/playlists"} element={<Playlists />} />
 
 				<Route path={"/recordings/recordings"} element={<Recordings />} />
 

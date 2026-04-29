@@ -6,6 +6,7 @@ import tableFilterProfiles from "./slices/tableFilterProfilesSlice";
 import events from "./slices/eventSlice";
 import table from "./slices/tableSlice";
 import series from "./slices/seriesSlice";
+import playlists from "./slices/playlistSlice";
 import recordings from "./slices/recordingSlice";
 import jobs from "./slices/jobSlice";
 import servers from "./slices/serverSlice";
@@ -23,6 +24,7 @@ import userDetails from "./slices/userDetailsSlice";
 import recordingDetails from "./slices/recordingDetailsSlice";
 import groupDetails from "./slices/groupDetailsSlice";
 import aclDetails from "./slices/aclDetailsSlice";
+import playlistDetails from "./slices/playlistDetailsSlice";
 import themeDetails from "./slices/themeDetailsSlice";
 import userInfo from "./slices/userInfoSlice";
 import statistics from "./slices/statisticsSlice";
@@ -38,6 +40,7 @@ import autoMergeLevel2 from "redux-persist/es/stateReconciler/autoMergeLevel2";
 const tableFilterProfilesPersistConfig = { key: "tableFilterProfiles", storage, whitelist: ["profiles"] };
 const eventsPersistConfig = { key: "events", storage, whitelist: ["columns"] };
 const seriesPersistConfig = { key: "series", storage, whitelist: ["columns"] };
+const playlistPersistConfig = { key: "playlists", storage, whitelist: ["columns"] };
 const tablePersistConfig = { key: "table", storage, whitelist: ["pagination", "sortBy", "reverse"] };
 const recordingsPersistConfig = { key: "recordings", storage, whitelist: ["columns"] };
 const jobsPersistConfig = { key: "jobs", storage, whitelist: ["columns"] };
@@ -50,39 +53,41 @@ const themesPersistConfig = { key: "themes", storage, whitelist: ["columns"] };
 
 // form reducer and all other reducers used in this app
 const reducers = combineReducers({
-	tableFilters,
-	tableFilterProfiles: persistReducer(tableFilterProfilesPersistConfig, tableFilterProfiles),
-	events: persistReducer(eventsPersistConfig, events),
-	series: persistReducer(seriesPersistConfig, series),
-	table: persistReducer(tablePersistConfig, table),
-	recordings: persistReducer(recordingsPersistConfig, recordings),
-	jobs: persistReducer(jobsPersistConfig, jobs),
-	servers: persistReducer(serversPersistConfig, servers),
-	services: persistReducer(servicesPersistConfig, services),
-	users: persistReducer(usersPersistConfig, users),
-	groups: persistReducer(groupsPersistConfig, groups),
-	acls: persistReducer(aclsPersistConfig, acls),
-	themes: persistReducer(themesPersistConfig, themes),
-	health,
-	notifications,
-	workflows,
-	eventDetails,
-	themeDetails,
-	seriesDetails,
-	recordingDetails,
-	userDetails,
-	groupDetails,
-	aclDetails,
-	userInfo,
-	statistics,
+  tableFilters,
+  tableFilterProfiles: persistReducer(tableFilterProfilesPersistConfig, tableFilterProfiles),
+  events: persistReducer(eventsPersistConfig, events),
+  series: persistReducer(seriesPersistConfig, series),
+  playlists: persistReducer(playlistPersistConfig, playlists),
+  table: persistReducer(tablePersistConfig, table),
+  recordings: persistReducer(recordingsPersistConfig, recordings),
+  jobs: persistReducer(jobsPersistConfig, jobs),
+  servers: persistReducer(serversPersistConfig, servers),
+  services: persistReducer(servicesPersistConfig, services),
+  users: persistReducer(usersPersistConfig, users),
+  groups: persistReducer(groupsPersistConfig, groups),
+  acls: persistReducer(aclsPersistConfig, acls),
+  themes: persistReducer(themesPersistConfig, themes),
+  health,
+  notifications,
+  workflows,
+  eventDetails,
+  playlistDetails,
+  themeDetails,
+  seriesDetails,
+  recordingDetails,
+  userDetails,
+  groupDetails,
+  aclDetails,
+  userInfo,
+  statistics,
 });
 
 // Configuration for persisting store
 const persistConfig = {
-	key: "root",
-	storage,
-	stateReconciler: autoMergeLevel2,
-	whitelist: ["tableFilters"],
+  key: "root",
+  storage,
+  stateReconciler: autoMergeLevel2,
+  whitelist: ["tableFilters"],
 };
 
 const persistedReducer = persistReducer<ReturnType<typeof reducers>>(persistConfig, reducers);
