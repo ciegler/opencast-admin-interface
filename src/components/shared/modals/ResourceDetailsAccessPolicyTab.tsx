@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import RenderMultiField from "../wizard/RenderMultiField";
 import {
 	Acl,
@@ -434,6 +434,12 @@ export const AccessPolicyTable = <T extends AccessPolicyTabFormikProps>({
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	const dropdownOptions = useMemo(() => {
+		return roles.length > 0
+			? formatAclRolesForDropdown(rolesFilteredbyPolicies)
+			: [];
+	}, [roles, rolesFilteredbyPolicies]);
+
 	const createPolicy = (role: string, withUser: boolean): TransformedAcl => {
 		const user = withUser ? { username: "", name: "", email: "" } : undefined;
 
@@ -537,11 +543,7 @@ export const AccessPolicyTable = <T extends AccessPolicyTabFormikProps>({
 																	<DropDown
 																		value={policy.role}
 																		text={createPolicyLabel(policy)}
-																		options={
-																			roles.length > 0
-																				? formatAclRolesForDropdown(rolesFilteredbyPolicies)
-																				: []
-																		}
+																		options={dropdownOptions}
 																		required={true}
 																		creatable={true}
 																		handleChange={element => {
