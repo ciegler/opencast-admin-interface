@@ -115,6 +115,7 @@
 				"UNKNOWN": "L’élément suivant sera supprimé",
 				"EVENT": "L’événement suivant sera supprimé",
 				"SERIES": "Les séries suivantes seront supprimées",
+				"PLAYLIST": "The following playlist will be deleted",
 				"ACL": "L’ACL suivante sera supprimée",
 				"GROUP": "Le groupe suivant sera supprimé",
 				"USER": "L’utilisateur suivant sera supprimée",
@@ -177,6 +178,11 @@
 		"GROUP_NOT_DELETED": "Le groupe n'a pas pu être supprimé",
 		"SERIES_ADDED": "La série a été créée",
 		"SERIES_NOT_SAVED": "La série n'a pas pu être enregistrée",
+		"PLAYLIST_ADDED": "The playlist has been created",
+		"PLAYLIST_NOT_SAVED": "The playlist could not be created",
+		"PLAYLIST_DELETED": "The playlist has been deleted",
+		"PLAYLIST_NOT_DELETED": "The playlist could not be deleted",
+		"PLAYLIST_ENTRIES_UPDATED": "The playlist entries have been updated",
 		"SERIES_PATH_UPDATED": "The series path has been updated",
 		"SERIES_PATH_REMOVED": "The series path has been removed",
 		"SERIES_PATH_NOT_UPDATED": "The series path could not be updated",
@@ -624,12 +630,14 @@
 			"NAVIGATION": {
 				"EVENTS": "Événements",
 				"SERIES": "Séries",
+				"PLAYLISTS": "Playlists",
 				"OVERVIEW": "Aperçu",
 				"LABEL": "Switch between events and series."
 			},
 			"UPLOAD": "Envoyer",
 			"ADD_SERIES": "Ajouter une série",
 			"ADD_EVENT": "Ajouter événement",
+			"ADD_PLAYLIST": "Add playlist",
 			"TABLE": {
 				"CAPTION": "Événements",
 				"TITLE": "Titre",
@@ -1284,6 +1292,74 @@
 					"STATUS": "Statut",
 					"LOCATION": "Emplacement",
 					"LINK": "Lien"
+				}
+			}
+		},
+		"PLAYLISTS": {
+			"NEW": {
+				"CAPTION": "Add playlist",
+				"METADATA": {
+					"CAPTION": "Métadonnées"
+				},
+				"ACCESS": {
+					"CAPTION": "Droits d'accès"
+				},
+				"SUMMARY": {
+					"CAPTION": "Résumé"
+				}
+			},
+			"TABLE": {
+				"CAPTION": "Playlists",
+				"TITLE": "Titre",
+				"DESCRIPTION": "Description",
+				"CREATOR": "Auteur",
+				"UPDATED": "Updated",
+				"ACTION": "Action",
+				"TOOLTIP": {
+					"DETAILS": "Open playlist details"
+				}
+			},
+			"DETAILS": {
+				"HEADER": "Playlist details - {{name}}",
+				"TABS": {
+					"METADATA": "Métadonnées",
+					"ENTRIES": "Entries",
+					"PERMISSIONS": "Droits d'accès"
+				},
+				"METADATA": {
+					"TITLE": "Titre",
+					"DESCRIPTION": "Description",
+					"CREATOR": "Auteur",
+					"UPDATED": "Updated",
+					"ENTRIES": "Entries"
+				},
+				"ENTRIES": {
+					"AVAILABLE": "Add Events",
+					"SEARCH_PLACEHOLDER": "Search events by title...",
+					"EMPTY": "This playlist has no entries yet.",
+					"NO_AVAILABLE": "There are no events available to add.",
+					"REMOVE": "Remove entry",
+					"UNKNOWN": "Unknown entry",
+					"OPEN_PLAYER": "Open in player",
+					"DATE_LABEL": "Created: ",
+					"SERIES_LABEL": "Series: ",
+					"PRESENTERS_LABEL": "Presenter(s): "
+				},
+				"ACCESS": {
+					"ACCESS_POLICY": {
+						"LABEL": "Séléctionner un modèle",
+						"DESCRIPTION": ""
+					},
+					"NON_USER_ROLES": "Roles and Groups authorized for the playlist",
+					"ROLE": "Rôle",
+					"READ": "Lecture",
+					"WRITE": "Ecriture",
+					"ADDITIONAL_ACTIONS": "Actions supplémentaires",
+					"NEW": "Ajouter",
+					"USERS": "Users who are authorized for the playlist",
+					"USER": "Utilisateur",
+					"NEW_USER": "New user",
+					"EMPTY": "No access policies defined"
 				}
 			}
 		}
@@ -1993,6 +2069,14 @@
 			},
 			"CREATION_DATE": {
 				"LABEL": "Créé le"
+			}
+		},
+		"PLAYLISTS": {
+			"CREATOR": {
+				"LABEL": "Auteur"
+			},
+			"UPDATED": {
+				"LABEL": "Updated"
 			}
 		},
 		"USERS": {

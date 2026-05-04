@@ -115,6 +115,7 @@
 				"UNKNOWN": "Det følgende element slettes",
 				"EVENT": "Den følgende begivenhed slettes",
 				"SERIES": "Den følgende serie slettes",
+				"PLAYLIST": "The following playlist will be deleted",
 				"ACL": "Den følgende ACL slettes",
 				"GROUP": "Den følgende gruppe slettes",
 				"USER": "Den følgende bruger slettes",
@@ -177,6 +178,11 @@
 		"GROUP_NOT_DELETED": "Gruppen kunne ikke slettes",
 		"SERIES_ADDED": "Serien er blevet oprettet",
 		"SERIES_NOT_SAVED": "Serien kunne ikke gemmes",
+		"PLAYLIST_ADDED": "The playlist has been created",
+		"PLAYLIST_NOT_SAVED": "The playlist could not be created",
+		"PLAYLIST_DELETED": "The playlist has been deleted",
+		"PLAYLIST_NOT_DELETED": "The playlist could not be deleted",
+		"PLAYLIST_ENTRIES_UPDATED": "The playlist entries have been updated",
 		"SERIES_PATH_UPDATED": "The series path has been updated",
 		"SERIES_PATH_REMOVED": "The series path has been removed",
 		"SERIES_PATH_NOT_UPDATED": "The series path could not be updated",
@@ -624,12 +630,14 @@
 			"NAVIGATION": {
 				"EVENTS": "Begivenheder",
 				"SERIES": "Serier",
+				"PLAYLISTS": "Playlists",
 				"OVERVIEW": "Oversigt",
 				"LABEL": "Switch between events and series."
 			},
 			"UPLOAD": "Upload",
 			"ADD_SERIES": "Tilføj serier",
 			"ADD_EVENT": "Tilføj begivenhed",
+			"ADD_PLAYLIST": "Add playlist",
 			"TABLE": {
 				"CAPTION": "Begivenheder",
 				"TITLE": "Titel",
@@ -1284,6 +1292,74 @@
 					"STATUS": "Status",
 					"LOCATION": "Placering",
 					"LINK": "Link"
+				}
+			}
+		},
+		"PLAYLISTS": {
+			"NEW": {
+				"CAPTION": "Add playlist",
+				"METADATA": {
+					"CAPTION": "Metadata"
+				},
+				"ACCESS": {
+					"CAPTION": "Adgangspolitik"
+				},
+				"SUMMARY": {
+					"CAPTION": "Oversigt"
+				}
+			},
+			"TABLE": {
+				"CAPTION": "Playlists",
+				"TITLE": "Title",
+				"DESCRIPTION": "Beskriveslse",
+				"CREATOR": "Opretter",
+				"UPDATED": "Updated",
+				"ACTION": "Action",
+				"TOOLTIP": {
+					"DETAILS": "Open playlist details"
+				}
+			},
+			"DETAILS": {
+				"HEADER": "Playlist details - {{name}}",
+				"TABS": {
+					"METADATA": "Metadata",
+					"ENTRIES": "Entries",
+					"PERMISSIONS": "Adgangspolitik"
+				},
+				"METADATA": {
+					"TITLE": "Title",
+					"DESCRIPTION": "Beskriveslse",
+					"CREATOR": "Opretter",
+					"UPDATED": "Updated",
+					"ENTRIES": "Entries"
+				},
+				"ENTRIES": {
+					"AVAILABLE": "Add Events",
+					"SEARCH_PLACEHOLDER": "Search events by title...",
+					"EMPTY": "This playlist has no entries yet.",
+					"NO_AVAILABLE": "There are no events available to add.",
+					"REMOVE": "Remove entry",
+					"UNKNOWN": "Unknown entry",
+					"OPEN_PLAYER": "Open in player",
+					"DATE_LABEL": "Created: ",
+					"SERIES_LABEL": "Series: ",
+					"PRESENTERS_LABEL": "Presenter(s): "
+				},
+				"ACCESS": {
+					"ACCESS_POLICY": {
+						"LABEL": "Vælg en skabelon",
+						"DESCRIPTION": ""
+					},
+					"NON_USER_ROLES": "Roles and Groups authorized for the playlist",
+					"ROLE": "Rolle",
+					"READ": "Læse",
+					"WRITE": "Skrive",
+					"ADDITIONAL_ACTIONS": "Yderligere handlinger",
+					"NEW": "Nye politik",
+					"USERS": "Users who are authorized for the playlist",
+					"USER": "Bruger",
+					"NEW_USER": "New user",
+					"EMPTY": "No access policies defined"
 				}
 			}
 		}
@@ -1993,6 +2069,14 @@
 			},
 			"CREATION_DATE": {
 				"LABEL": "Oprettet"
+			}
+		},
+		"PLAYLISTS": {
+			"CREATOR": {
+				"LABEL": "Opretter"
+			},
+			"UPDATED": {
+				"LABEL": "Updated"
 			}
 		},
 		"USERS": {

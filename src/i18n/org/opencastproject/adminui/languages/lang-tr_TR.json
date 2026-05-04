@@ -115,6 +115,7 @@
 				"UNKNOWN": "Öğe silinecek",
 				"EVENT": "Aşağıdaki etkinlik silinecek",
 				"SERIES": "Aşağıdaki seriler silinecek",
+				"PLAYLIST": "The following playlist will be deleted",
 				"ACL": "Aşağıdaki ACL silinecek",
 				"GROUP": "Aşağıdaki grup silinecek",
 				"USER": "Aşağıdaki kullanıcı silinecek",
@@ -177,6 +178,11 @@
 		"GROUP_NOT_DELETED": "Grup silinemedi",
 		"SERIES_ADDED": "Dizi oluşturuldu",
 		"SERIES_NOT_SAVED": "Dizi kaydedilemedi",
+		"PLAYLIST_ADDED": "The playlist has been created",
+		"PLAYLIST_NOT_SAVED": "The playlist could not be created",
+		"PLAYLIST_DELETED": "The playlist has been deleted",
+		"PLAYLIST_NOT_DELETED": "The playlist could not be deleted",
+		"PLAYLIST_ENTRIES_UPDATED": "The playlist entries have been updated",
 		"SERIES_PATH_UPDATED": "The series path has been updated",
 		"SERIES_PATH_REMOVED": "The series path has been removed",
 		"SERIES_PATH_NOT_UPDATED": "The series path could not be updated",
@@ -624,12 +630,14 @@
 			"NAVIGATION": {
 				"EVENTS": "Etkinlikler",
 				"SERIES": "Seri",
+				"PLAYLISTS": "Playlists",
 				"OVERVIEW": "Önizleme",
 				"LABEL": "Switch between events and series."
 			},
 			"UPLOAD": "Karşıya Yükle",
 			"ADD_SERIES": "Seri ekle",
 			"ADD_EVENT": "Etkinlik ekle",
+			"ADD_PLAYLIST": "Add playlist",
 			"TABLE": {
 				"CAPTION": "Etkinlikler",
 				"TITLE": "Başlık",
@@ -1284,6 +1292,74 @@
 					"STATUS": "Durum",
 					"LOCATION": "Konum",
 					"LINK": "Bağlantı Adresi"
+				}
+			}
+		},
+		"PLAYLISTS": {
+			"NEW": {
+				"CAPTION": "Add playlist",
+				"METADATA": {
+					"CAPTION": "Üstveri"
+				},
+				"ACCESS": {
+					"CAPTION": "Erişim Politikası"
+				},
+				"SUMMARY": {
+					"CAPTION": "Özet"
+				}
+			},
+			"TABLE": {
+				"CAPTION": "Playlists",
+				"TITLE": "Title",
+				"DESCRIPTION": "Açıklama",
+				"CREATOR": "Oluşturan",
+				"UPDATED": "Updated",
+				"ACTION": "Action",
+				"TOOLTIP": {
+					"DETAILS": "Open playlist details"
+				}
+			},
+			"DETAILS": {
+				"HEADER": "Playlist details - {{name}}",
+				"TABS": {
+					"METADATA": "Üstveri",
+					"ENTRIES": "Entries",
+					"PERMISSIONS": "Erişim Politikası"
+				},
+				"METADATA": {
+					"TITLE": "Title",
+					"DESCRIPTION": "Açıklama",
+					"CREATOR": "Oluşturan",
+					"UPDATED": "Updated",
+					"ENTRIES": "Entries"
+				},
+				"ENTRIES": {
+					"AVAILABLE": "Add Events",
+					"SEARCH_PLACEHOLDER": "Search events by title...",
+					"EMPTY": "This playlist has no entries yet.",
+					"NO_AVAILABLE": "There are no events available to add.",
+					"REMOVE": "Remove entry",
+					"UNKNOWN": "Unknown entry",
+					"OPEN_PLAYER": "Open in player",
+					"DATE_LABEL": "Created: ",
+					"SERIES_LABEL": "Series: ",
+					"PRESENTERS_LABEL": "Presenter(s): "
+				},
+				"ACCESS": {
+					"ACCESS_POLICY": {
+						"LABEL": "Bir şablon seç",
+						"DESCRIPTION": ""
+					},
+					"NON_USER_ROLES": "Roles and Groups authorized for the playlist",
+					"ROLE": "Rol",
+					"READ": "Oku",
+					"WRITE": "Yaz",
+					"ADDITIONAL_ACTIONS": "Ek Eylemler",
+					"NEW": "Yeni sözleşme",
+					"USERS": "Users who are authorized for the playlist",
+					"USER": "Kullanıcı",
+					"NEW_USER": "New user",
+					"EMPTY": "No access policies defined"
 				}
 			}
 		}
@@ -1993,6 +2069,14 @@
 			},
 			"CREATION_DATE": {
 				"LABEL": "Oluşturuldu"
+			}
+		},
+		"PLAYLISTS": {
+			"CREATOR": {
+				"LABEL": "Oluşturan"
+			},
+			"UPDATED": {
+				"LABEL": "Updated"
 			}
 		},
 		"USERS": {

@@ -115,6 +115,7 @@
 				"UNKNOWN": "Naslednji element bo izbrisan",
 				"EVENT": "Naslednji dogodek bo izbrisan",
 				"SERIES": "Naslednje serije bodo izbrisane",
+				"PLAYLIST": "The following playlist will be deleted",
 				"ACL": "Naslednji seznam za nadzor dostopa bo izbrisan",
 				"GROUP": "Naslednja skupina bo izbrisana",
 				"USER": "Naslednji uporabnik bo izbrisan",
@@ -177,6 +178,11 @@
 		"GROUP_NOT_DELETED": "Skupine ni bilo mogoče izbrisati",
 		"SERIES_ADDED": "Serija je ustvarjena",
 		"SERIES_NOT_SAVED": "Serije ni bilo mogoče shraniti",
+		"PLAYLIST_ADDED": "The playlist has been created",
+		"PLAYLIST_NOT_SAVED": "The playlist could not be created",
+		"PLAYLIST_DELETED": "The playlist has been deleted",
+		"PLAYLIST_NOT_DELETED": "The playlist could not be deleted",
+		"PLAYLIST_ENTRIES_UPDATED": "The playlist entries have been updated",
 		"SERIES_PATH_UPDATED": "The series path has been updated",
 		"SERIES_PATH_REMOVED": "The series path has been removed",
 		"SERIES_PATH_NOT_UPDATED": "The series path could not be updated",
@@ -624,12 +630,14 @@
 			"NAVIGATION": {
 				"EVENTS": "Dogodki",
 				"SERIES": "Serije",
+				"PLAYLISTS": "Playlists",
 				"OVERVIEW": "Pregled",
 				"LABEL": "Switch between events and series."
 			},
 			"UPLOAD": "Naloži",
 			"ADD_SERIES": "Dodaj serijo",
 			"ADD_EVENT": "Dodaj dogodek",
+			"ADD_PLAYLIST": "Add playlist",
 			"TABLE": {
 				"CAPTION": "Dogodki",
 				"TITLE": "Naslov",
@@ -1284,6 +1292,74 @@
 					"STATUS": "Stanje",
 					"LOCATION": "Lokacija",
 					"LINK": "Povezava"
+				}
+			}
+		},
+		"PLAYLISTS": {
+			"NEW": {
+				"CAPTION": "Add playlist",
+				"METADATA": {
+					"CAPTION": "Metapodatki"
+				},
+				"ACCESS": {
+					"CAPTION": "Pravilnik o dostopu"
+				},
+				"SUMMARY": {
+					"CAPTION": "Povzetek"
+				}
+			},
+			"TABLE": {
+				"CAPTION": "Playlists",
+				"TITLE": "Title",
+				"DESCRIPTION": "Opis",
+				"CREATOR": "Avtor",
+				"UPDATED": "Updated",
+				"ACTION": "Action",
+				"TOOLTIP": {
+					"DETAILS": "Open playlist details"
+				}
+			},
+			"DETAILS": {
+				"HEADER": "Playlist details - {{name}}",
+				"TABS": {
+					"METADATA": "Metapodatki",
+					"ENTRIES": "Entries",
+					"PERMISSIONS": "Pravilnik o dostopu"
+				},
+				"METADATA": {
+					"TITLE": "Title",
+					"DESCRIPTION": "Opis",
+					"CREATOR": "Avtor",
+					"UPDATED": "Updated",
+					"ENTRIES": "Entries"
+				},
+				"ENTRIES": {
+					"AVAILABLE": "Add Events",
+					"SEARCH_PLACEHOLDER": "Search events by title...",
+					"EMPTY": "This playlist has no entries yet.",
+					"NO_AVAILABLE": "There are no events available to add.",
+					"REMOVE": "Remove entry",
+					"UNKNOWN": "Unknown entry",
+					"OPEN_PLAYER": "Open in player",
+					"DATE_LABEL": "Created: ",
+					"SERIES_LABEL": "Series: ",
+					"PRESENTERS_LABEL": "Presenter(s): "
+				},
+				"ACCESS": {
+					"ACCESS_POLICY": {
+						"LABEL": "Izberite predlogo",
+						"DESCRIPTION": ""
+					},
+					"NON_USER_ROLES": "Roles and Groups authorized for the playlist",
+					"ROLE": "Vloga",
+					"READ": "Branje",
+					"WRITE": "Zapisovanje",
+					"ADDITIONAL_ACTIONS": "Dodatna dejanja",
+					"NEW": "Nov pravilnik",
+					"USERS": "Users who are authorized for the playlist",
+					"USER": "Uporabnik",
+					"NEW_USER": "New user",
+					"EMPTY": "No access policies defined"
 				}
 			}
 		}
@@ -1993,6 +2069,14 @@
 			},
 			"CREATION_DATE": {
 				"LABEL": "Ustvarjeno"
+			}
+		},
+		"PLAYLISTS": {
+			"CREATOR": {
+				"LABEL": "Avtor"
+			},
+			"UPDATED": {
+				"LABEL": "Updated"
 			}
 		},
 		"USERS": {
