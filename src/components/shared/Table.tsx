@@ -222,10 +222,14 @@ const TableHeadRows = ({ forceDeselectAll }: { forceDeselectAll: () => unknown }
 		forceDeselectAll();
 		dispatch(setSortBy(colName));
 		let direction: ReverseOptions = "ASC";
-		if (reverse && reverse === "ASC") {
-			direction = "DESC";
-		} else if (reverse && reverse === "DESC") {
-			direction = "NONE";
+		if (sortBy !== colName) {
+			direction = "ASC";
+		} else {
+			if (reverse && reverse === "ASC") {
+				direction = "DESC";
+			} else if (reverse && reverse === "DESC") {
+				direction = "NONE";
+			}
 		}
 		dispatch(reverseTable(direction));
 		dispatch(updatePages());
