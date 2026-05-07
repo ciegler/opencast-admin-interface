@@ -1895,6 +1895,11 @@
 			},
 			"WRITE_ACCESS": {
 				"LABEL": "Write Access"
+			},
+			"NEEDS_CUTTING": {
+				"LABEL": "Needs cutting",
+				"YES": "Yes",
+				"NO": "No"
 			}
 		},
 		"JOBS": {
