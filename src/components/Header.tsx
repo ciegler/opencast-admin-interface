@@ -8,6 +8,7 @@ import { setSpecificServiceFilter } from "../slices/tableFilterSlice";
 import { getErrorCount, getHealthStatus } from "../selectors/healthSelectors";
 import {
 	getOrgProperties,
+	getUserBasicInfo,
 	getUserInformation,
 } from "../selectors/userInfoSelectors";
 import { availableHotkeys } from "../configs/hotkeysConfig";
@@ -27,6 +28,8 @@ import { ModalHandle } from "./shared/modals/Modal";
 import { broadcastLogout } from "../utils/broadcastSync";
 import BaseButton from "./shared/BaseButton";
 import { LuBell, LuCheck, LuChevronDown, LuCirclePlay, LuMessageCircleQuestion, LuVideo } from "react-icons/lu";
+import { fetchUserDetails } from "../slices/userDetailsSlice";
+import ChangePasswordModal from "./shared/modals/ChangePassword";
 
 // References for detecting a click outside of the container of the dropdown menus
 const containerLang = React.createRef<HTMLDivElement>();
@@ -47,6 +50,7 @@ const Header = () => {
 	const [displayMenuHelp, setMenuHelp] = useState(false);
 	const registrationModalRef = useRef<ModalHandle>(null);
 	const hotKeyCheatSheetModalRef = useRef<ModalHandle>(null);
+	const changePasswordModalRef = useRef<ModalHandle>(null);
 
 	const healthStatus = useAppSelector(state => getHealthStatus(state));
 	const errorCounter = useAppSelector(state => getErrorCount(state));
@@ -273,7 +277,11 @@ const Header = () => {
 							<LuChevronDown className="dropdown-icon" />
 						</BaseButton>
 						{/* Click on username, a dropdown menu with the option to logout opens */}
-						{displayMenuUser && <MenuUser />}
+						{displayMenuUser &&
+							<MenuUser
+								changePasswordRef={changePasswordModalRef}
+							/>
+						}
 					</div>
 				</nav>
 			</header>
@@ -286,6 +294,9 @@ const Header = () => {
 
 			{/* Hotkey Cheat Sheet */}
 			<HotKeyCheatSheet modalRef={hotKeyCheatSheetModalRef}/>
+
+			{/* Change Password Modal */}
+			<ChangePasswordModal modalRef={changePasswordModalRef}/>
 		</>
 	);
 };
@@ -432,16 +443,35 @@ const MenuHelp = ({
 	);
 };
 
-const MenuUser = () => {
+const MenuUser = ({
+	changePasswordRef,
+}: {
+	changePasswordRef: React.RefObject<ModalHandle | null>
+}) => {
 	const { t } = useTranslation();
+	const dispatch = useAppDispatch();
+
+	const user = useAppSelector(getUserBasicInfo);
 
 	const logout = () => {
 		// Here we broadcast logout, in order to redirect other tabs to login page!
 		broadcastLogout();
 		window.location.href = "/j_spring_security_logout";
 	};
+
+	const showChangePasswordModal = async () => {
+		await dispatch(fetchUserDetails(user.username));
+
+		changePasswordRef.current?.open();
+	};
+
 	return (
 		<ul className="dropdown-ul">
+			<li>
+				<ButtonLikeAnchor onClick={() => showChangePasswordModal()}>
+					<span>{t("USER_MENU.CHANGE_PASSWORD")}</span>
+				</ButtonLikeAnchor>
+			</li>
 			<li>
 				<ButtonLikeAnchor onClick={() => logout()}>
 					<span className="logout-icon">{t("LOGOUT")}</span>

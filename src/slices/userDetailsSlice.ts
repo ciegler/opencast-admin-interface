@@ -81,6 +81,28 @@ export const updateUserDetails = (params: {
 		});
 };
 
+export const updateUserPassword = (params: {
+	password: string,
+}): AppThunk => dispatch => {
+	const { password } = params;
+
+	// get URL params used for put request
+	const data = new URLSearchParams();
+	data.append("password", password);
+
+	// PUT request
+	axios
+		.put("/admin-ng/users/self", data)
+		.then(response => {
+			console.info(response);
+			dispatch(addNotification({ type: "success", key: "USER_UPDATED" }));
+		})
+		.catch(response => {
+			console.error(response);
+			dispatch(addNotification({ type: "error", key: "USER_NOT_SAVED" }));
+		});
+};
+
 const userDetailsSlice = createSlice({
 	name: "userDetails",
 	initialState,
