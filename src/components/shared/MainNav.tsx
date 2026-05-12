@@ -173,14 +173,18 @@ const MainNav = ({
 	// current view is always the first element. Otherwise, NavLink will not
 	// recognize the current view as active.
 	if (firstPathFragment.length > 0) {
-		const arrToSort = linkMap[firstPathFragment as keyof typeof linkMap].links;
-		if (arrToSort != undefined && arrToSort.length > 1) {
-			arrToSort.forEach(item => {
+		const linkMapItem = linkMap[firstPathFragment as keyof typeof linkMap];
+
+		if (linkMapItem?.links && linkMapItem.links.length > 1) {
+			const arrToSort = linkMapItem.links;
+			if (arrToSort != undefined && arrToSort.length > 1) {
+				arrToSort.forEach(item => {
+					// @ts-expect-error: TODO: Someone else can fix this
+					if (item.path === pathname) { item.tmpIndex = 0; } else { item.tmpIndex = 1; }
+				});
 				// @ts-expect-error: TODO: Someone else can fix this
-				if (item.path === pathname) { item.tmpIndex = 0; } else { item.tmpIndex = 1; }
-			});
-			// @ts-expect-error: TODO: Someone else can fix this
-			arrToSort.sort((a, b) => a.tmpIndex - b.tmpIndex);
+				arrToSort.sort((a, b) => a.tmpIndex - b.tmpIndex);
+			}
 		}
 	}
 

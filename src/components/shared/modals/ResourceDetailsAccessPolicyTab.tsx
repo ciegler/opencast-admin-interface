@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import RenderMultiField from "../wizard/RenderMultiField";
 import {
 	Acl,
@@ -434,6 +434,12 @@ export const AccessPolicyTable = <T extends AccessPolicyTabFormikProps>({
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	const dropdownOptions = useMemo(() => {
+		return roles.length > 0
+			? formatAclRolesForDropdown(rolesFilteredbyPolicies)
+			: [];
+	}, [roles, rolesFilteredbyPolicies]);
+
 	const createPolicy = (role: string, withUser: boolean): TransformedAcl => {
 		const user = withUser ? { username: "", name: "", email: "" } : undefined;
 
@@ -540,28 +546,24 @@ export const AccessPolicyTable = <T extends AccessPolicyTabFormikProps>({
 											{formik.values.policies.length > 0 &&
 												policiesFiltered.map(
 													(policy, index) => (
-														<tr key={index}>
+														<tr key={policy.role + index}>
 															{/* dropdown for policy.role */}
 															<td className="editable">
 																{!transactions.readOnly ? (
 																	<DropDown
 																		value={policy.role}
 																		text={createPolicyLabel(policy)}
-																		options={
-																			roles.length > 0
-																				? formatAclRolesForDropdown(rolesFilteredbyPolicies)
-																				: []
-																		}
+																		options={dropdownOptions}
 																		required={true}
 																		creatable={true}
 																		handleChange={element => {
 																			if (element) {
 																				const matchingRole = roles.find(role => role.name === element.value);
-																				formik.setFieldValue(`policies.${index}.role`, element.value);
-																				formik.setFieldValue(
-																					`policies.${index}.user`,
-																					matchingRole ? matchingRole.user : undefined,
-																				);
+																				arrayHelpers.replace(formik.values.policies.findIndex(p => p === policy), {
+																					...policy,
+																					role: element.value,
+																					user: matchingRole ? matchingRole.user : undefined,
+																				});
 																			}
 																		}}
 																		placeholder={
@@ -601,7 +603,10 @@ export const AccessPolicyTable = <T extends AccessPolicyTabFormikProps>({
 																			: "false"
 																	}`}
 																	onChange={(read: React.ChangeEvent<HTMLInputElement>) =>
-																		formik.setFieldValue(`policies.${index}.read`, read.target.checked)
+																		arrayHelpers.replace(formik.values.policies.findIndex(p => p === policy), {
+																			...policy,
+																			read: read.target.checked,
+																		})
 																	}
 																/>
 															</td>
@@ -625,7 +630,11 @@ export const AccessPolicyTable = <T extends AccessPolicyTabFormikProps>({
 																			: "false"
 																	}`}
 																	onChange={(write: React.ChangeEvent<HTMLInputElement>) =>
-																		formik.setFieldValue(`policies.${index}.write`, write.target.checked)
+																		arrayHelpers.replace(formik.values.policies.findIndex(p => p === policy), {
+																			...policy,
+																			write:
+																				write.target.checked,
+																		})
 																	}
 																/>
 															</td>
