@@ -1,4 +1,4 @@
-import i18n from "i18next";
+import i18n, { FormatterModule } from "i18next";
 import { initReactI18next } from "react-i18next";
 
 import HttpBackend, { HttpBackendOptions } from "i18next-http-backend";
@@ -23,7 +23,7 @@ import trTRTrans from "./org/opencastproject/adminui/languages/lang-tr_TR.json";
 import zhCNTrans from "./org/opencastproject/adminui/languages/lang-zh_CN.json";
 import zhTWTrans from "./org/opencastproject/adminui/languages/lang-zh_TW.json";
 import { getCurrentLanguageInformation } from "../utils/utils";
-import { format } from "date-fns/format";
+import { format as dateFnsFormat } from "date-fns/format";
 
 // Assignment of language code to translation file
 // !!! If translation file of a new language is added, please add assignment here, too !!!
@@ -47,11 +47,29 @@ const resources = {
 	"zh-TW": { translation: zhTWTrans },
 } as const;
 
+const myFormatter: FormatterModule = {
+	type: "formatter",
+	init(_services, _i18nextOptions) {},
+	format(value, format, lng, _options) {
+		if (value instanceof Date && format && lng) {
+			return dateFnsFormat(value, format, {
+				locale: getCurrentLanguageInformation(lng)?.dateLocale,
+			});
+		}
+
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-return
+		return value;
+	},
+	add(_name, _fc) { },
+	addCached(_name, _fc) { },
+};
+
 // Configuration of i18next
 i18n
 	.use(HttpBackend)
 	.use(LanguageDetector)
 	.use(initReactI18next)
+	.use(myFormatter)
 	.init<HttpBackendOptions>({
 		resources,
 		fallbackLng: "en-US",
@@ -59,17 +77,9 @@ i18n
 
 		interpolation: {
 			escapeValue: false,
-			format: function (value, formatStr, lng) {
-				if (value instanceof Date && formatStr && lng) {
-					return format(value, formatStr, {
-						locale: getCurrentLanguageInformation(lng)?.dateLocale,
-					});
-				}
-
-				// eslint-disable-next-line @typescript-eslint/no-unsafe-return
-				return value;
-			},
+			alwaysFormat: true,
 		},
+
 		react: {
 			useSuspense: false,
 		},
