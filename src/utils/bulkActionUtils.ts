@@ -117,7 +117,7 @@ export const isStartable = (event: Event) => {
 	return (
 		event.event_status.toUpperCase().indexOf("PROCESSED") > -1 ||
 		event.event_status.toUpperCase().indexOf("PROCESSING_FAILURE") > -1 ||
-		event.event_status.toUpperCase().indexOf("PROCESSING_CANCELED") > -1 ||
+		event.event_status.toUpperCase().indexOf("PROCESSING_CANCELLED") > -1 ||
 		!event.selected
 	);
 };
