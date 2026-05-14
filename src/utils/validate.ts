@@ -252,6 +252,15 @@ export const EditUserSchema = Yup.object().shape({
 	}),
 });
 
+export const PasswordSchema = Yup.object().shape({
+	passwordConfirmation: Yup.string().when("password", {
+		is: (value: any) => !!value,
+		then: () => Yup.string()
+			.oneOf([Yup.ref("password"), undefined], "Passwords must match")
+			.required("Required"),
+	}),
+});
+
 // Validation Schema used in group details modal
 export const EditGroupSchema = Yup.object().shape({
 	name: Yup.string().required("Required"),
