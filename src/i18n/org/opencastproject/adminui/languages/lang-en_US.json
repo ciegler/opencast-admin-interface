@@ -2196,5 +2196,11 @@
 		"TITLE": "Terms of use",
 		"NOCONTENT": "Content not available",
 		"AGREE": "I have read and agree to the terms of use"
+	},
+	"USER_MENU": {
+		"CHANGE_PASSWORD": "Change password"
+	},
+	"CHANGE_PASSWORD_MODAL": {
+		"TITLE": "Change your password"
 	}
 }
