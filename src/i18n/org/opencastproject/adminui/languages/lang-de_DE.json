@@ -1971,6 +1971,11 @@
 			},
 			"WRITE_ACCESS": {
 				"LABEL": "Write Access"
+			},
+			"NEEDS_CUTTING": {
+				"LABEL": "Needs cutting",
+				"YES": "Ja",
+				"NO": "Nein"
 			}
 		},
 		"JOBS": {
@@ -2272,5 +2277,11 @@
 		"TITLE": "Terms of use",
 		"NOCONTENT": "Inhalt nicht verfügbar",
 		"AGREE": "I have read and agree to the terms of use"
+	},
+	"USER_MENU": {
+		"CHANGE_PASSWORD": "Change password"
+	},
+	"CHANGE_PASSWORD_MODAL": {
+		"TITLE": "Change your password"
 	}
 }
