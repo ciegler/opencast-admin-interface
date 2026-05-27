@@ -9,7 +9,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "jsx": "react-jsx", 
+    "jsx": "react-jsx",
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
