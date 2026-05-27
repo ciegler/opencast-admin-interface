@@ -26,7 +26,7 @@
 
     background: variables.$modal-nav-bg-color;
     height: 100px;
-    padding: 24px;
+    padding: 24px !important;
 
     .MuiStepLabel-root {
         align-self: flex-start;

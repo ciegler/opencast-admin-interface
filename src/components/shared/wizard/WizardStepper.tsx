@@ -79,7 +79,7 @@ const WizardStepper = ({
 			{steps.map((label, key) =>
 				<Step key={label.translation} completed={completed[key]}>
 					<StepButton onClick={() => handleOnClick(key)}>
-						<StepLabel StepIconComponent={CustomStepIcon}>
+						<StepLabel slots={{ stepIcon: CustomStepIcon }}>
 							{t(label.translation)}
 						</StepLabel>
 					</StepButton>
