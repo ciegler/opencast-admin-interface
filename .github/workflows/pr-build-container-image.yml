@@ -25,7 +25,6 @@ jobs:
       - name: Build and push images
         uses: docker/build-push-action@v6
         with:
-          context: .
           push: false # This is handled in another workflow!
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
